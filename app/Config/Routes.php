@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-$routes->get('/talana', 'Home::talana');
+/** Debe mostrar las preguntas */
+$routes->get('/talana', 'Talana::index');
 
 service('auth')->routes($routes);
