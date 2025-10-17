@@ -14,6 +14,12 @@ $routes->get('/talana', 'Talana::index');
 $routes->get('/api/usuarios', 'Usuarios::index');
 $routes->post('/api/usuarios', 'Usuarios::create');
 
+/** Preguntas */
+$routes->get('/api/preguntas', 'Preguntas::index');
+$routes->get('/api/preguntas/(:num)', 'Preguntas::show/$1');
+$routes->post('/api/preguntas', 'Preguntas::create');
+
+
 /** Trivias */
 $routes->get('/api/trivias', 'Trivias::index');
 $routes->get('/api/trivia/(:num)', 'Trivias::show/$1');
