@@ -19,6 +19,7 @@ class Usuarios extends Model
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted';
 
     protected $validationRules    = [];
     protected $validationMessages = [];
