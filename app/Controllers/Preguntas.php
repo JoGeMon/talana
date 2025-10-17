@@ -44,6 +44,11 @@ class Preguntas extends ResourceController {
             }
             $data->updated_by = 1; // TODO: Cambiar cuando se implemente login
 
+            $trivia = model('Trivias')->find($data->id_trivia);
+            if(!$trivia){
+                return $this->failValidationErrors('No se encontró la trivia con id: '.$data->id_trivia);
+            }
+
             if($preguntasModel->insert($data)){
                 return $this->respondCreated($data,'Pregunta creada correctamente');
             }

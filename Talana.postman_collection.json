@@ -15,7 +15,17 @@
 					"name": "Lista usuarios",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/usuarios",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
 					},
 					"response": []
 				},
@@ -34,11 +44,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/api/usuarios",
+							"raw": "{{baseURL}}/api/usuarios",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"usuarios"
@@ -59,11 +68,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/api/preguntas",
+							"raw": "{{baseURL}}/api/preguntas",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"preguntas"
@@ -85,15 +93,13 @@
 							"raw": "{\r\n    \"titulo\": \"Titulo\",\r\n    \"detalle\" : \"{{$randomLoremText}}\"\r\n}"
 						},
 						"url": {
-							"raw": "localhost:8080/api/preguntas/show/:pregunta_id",
+							"raw": "{{baseURL}}/api/preguntas/:pregunta_id",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"preguntas",
-								"show",
 								":pregunta_id"
 							],
 							"variable": [
@@ -114,7 +120,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"titulo\": \"Titulo\",\r\n    \"detalle\" : \"{{$randomLoremText}}\"\r\n}",
+							"raw": "{\r\n    \"titulo\": \"Titulo\",\r\n    \"detalle\" : \"{{$randomLoremText}}\",\r\n    \"id_trivia\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -122,11 +128,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/api/preguntas",
+							"raw": "{{baseURL}}/api/preguntas",
 							"host": [
-								"localhost"
+								"{{baseURL}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"preguntas"
@@ -137,6 +142,89 @@
 				}
 			],
 			"description": "Rutas que se utilizan para las funcionalidades de preguntas\n\n- Listar todas las preguntas creadas\n    \n- Crear preguntas\n    \n- Listar todas las preguntas de una trivia en particular\n    \n\nTODO:\n\n- Listar las preguntas de una dificultaad"
+		},
+		{
+			"name": "Trivias",
+			"item": [
+				{
+					"name": "Crear trivias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"nombre de la trivia\",\r\n    \"detalle\": \"{{$randomLoremParagraph}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/trivias",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"trivias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar trivias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/trivias",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"trivias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Trivia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/trivia/:id_trivia",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"trivia",
+								":id_trivia"
+							],
+							"variable": [
+								{
+									"key": "id_trivia",
+									"value": "1",
+									"description": "ID de la trivia\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
 		}
 	]
 }
