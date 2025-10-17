@@ -14,7 +14,7 @@ class Usuarios extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    //protected $allowedFields = ['username', 'email', 'password_hash', 'reset_hash', 'reset_at', 'reset_expires', 'activate_hash', 'status', 'status_message', 'active', 'force_pass_reset', 'permissions'];
+    protected $allowedFields = ['username'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
