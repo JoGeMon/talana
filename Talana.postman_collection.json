@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "10ceae43-9798-48f8-84ef-6e65142a623e",
+		"name": "Talana",
+		"description": "Espacio de prueba de las rutas para la prueba de ingreso a Talana",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49345707",
+		"_collection_link": "https://jogemon-9233686.postman.co/workspace/Jorge-Velarde's-Workspace~864f70e9-9f7a-4db8-8dd5-2e2850ba7243/collection/49345707-10ceae43-9798-48f8-84ef-6e65142a623e?action=share&source=collection_link&creator=49345707"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Lista usuarios",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Crea usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"nombre\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "rutas que se utilizan para las funcionalidades de usuarios"
+		},
+		{
+			"name": "Preguntas",
+			"item": [
+				{
+					"name": "Lista Preguntas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/preguntas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"preguntas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pregunta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Titulo\",\r\n    \"detalle\" : \"{{$randomLoremText}}\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/preguntas/show/:pregunta_id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"preguntas",
+								"show",
+								":pregunta_id"
+							],
+							"variable": [
+								{
+									"key": "pregunta_id",
+									"value": "2",
+									"description": "ID de pregunta"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear pregunta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Titulo\",\r\n    \"detalle\" : \"{{$randomLoremText}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/preguntas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"preguntas"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Rutas que se utilizan para las funcionalidades de preguntas\n\n- Listar todas las preguntas creadas\n    \n- Crear preguntas\n    \n- Listar todas las preguntas de una trivia en particular\n    \n\nTODO:\n\n- Listar las preguntas de una dificultaad"
+		}
+	]
+}

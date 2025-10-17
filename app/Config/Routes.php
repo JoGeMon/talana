@@ -23,5 +23,6 @@ $routes->post('/api/preguntas', 'Preguntas::create');
 /** Trivias */
 $routes->get('/api/trivias', 'Trivias::index');
 $routes->get('/api/trivia/(:num)', 'Trivias::show/$1');
+$routes->post('/api/trivias', 'Trivias::create');
  
 service('auth')->routes($routes);
